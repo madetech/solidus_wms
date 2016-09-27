@@ -8,7 +8,7 @@ module SolidusWms
       before_filter :authenticate_basic_auth, only: [:export_xlsx]
 
       def export_xlsx
-        exporter = Rails.application.config.order_xls_export_class.new
+        exporter = current_store.order_xls_export_class.new
 
         Mime::Type.register 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', :xlsx
 
