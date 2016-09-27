@@ -1,3 +1,5 @@
+require 'axlsx'
+
 module SolidusWms
   module AdditionalOrdersActions
     extend ActiveSupport::Concern
