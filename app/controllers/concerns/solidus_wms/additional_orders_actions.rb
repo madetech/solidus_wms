@@ -11,7 +11,7 @@ module SolidusWms
 
       send_data(xlsx_file_contents(exporter).to_stream.string,
                 type: Mime::XLSX,
-                disposition: "attachment; filename=orders.xlsx")
+                disposition: 'attachment; filename=orders.xlsx')
     end
 
     private
