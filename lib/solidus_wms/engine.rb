@@ -22,6 +22,7 @@ module SolidusWms
       Spree::Order.include(SolidusWms::OrderExportedAt)
       Spree::Order.whitelisted_ransackable_attributes << 'exported_at'
       Spree::Api::OrdersController.include(SolidusWms::AdditionalOrdersApiActions)
+      Spree::Admin::OrdersController.include(SolidusWms::AdditionalOrdersActions)
 
       Spree::Shipment.include(SolidusWms::ShipmentStatemachineTransitions)
       Spree::Shipment.prepend(SolidusWms::ShipmentDetermineState)
