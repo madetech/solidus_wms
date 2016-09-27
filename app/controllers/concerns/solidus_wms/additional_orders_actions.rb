@@ -15,7 +15,7 @@ module SolidusWms
     private
 
     def xlsx_file_contents(exporter)
-      Axlsx::Package.new do |p|
+      ::Axlsx::Package.new do |p|
         exporter.worksheets.each do |order_group|
           p.workbook.add_worksheet(name: order_group.fetch('name')) do |sheet|
             sheet.add_row order_group.fetch('headers')
